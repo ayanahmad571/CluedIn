@@ -2,7 +2,6 @@
 <html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <!-- <meta http-equiv="refresh" content="5" /> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CluedIn - Ready to win?</title>
@@ -12,6 +11,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Exo&display=swap");
@@ -23,17 +23,40 @@
       }
       
       .pnl-top {
-        background-color: #262626;
+        background-color: #14281D;
       }
 
       .pnl-hints {
-        background-color: #2b0300;
-        /* #6b2e00 */
+        background-color: #8D775F;
+        /* 
+        #6b2e00
+        #2b0300
+         */
+      }
+      .pnl-answer {
+        background-color: #A71D31;
+        /* 
+        #6b2e00
+        #2b0300
+         */
+      }
+
+      .text-small{
+        font-size: small;
+      }
+
+      .btn-option {
+        background-color: #F4FAFF;
+        width: 100%;
+      }
+
+      .option-holder {
+        /* padding:2%; */
       }
     </style>
   </head>
   <body>
-    <div class="panel panel-primary border-white">
+    <div class="panel panel-primary">
       <div class="panel-body">
         <div class="container text-center">
           <div class="row align-items-start">
@@ -58,8 +81,8 @@
     </div>
     <hr />
     <div class="container text-center">
-      <div class="row mb-3">
-        <div class="col">
+      <div class="row mb-2">
+        <div class="col" style="padding-right: 5px;">
           <div class="panel panel-primary shadow-lg p-3 rounded pnl-top">
             <div class="panel-body">
               <div class="container text-center">
@@ -72,7 +95,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col" style="padding-left: 5px;">
           <div class="panel panel-primary shadow-lg p-3 rounded pnl-top">
             <div class="panel-body">
               <div class="container text-center">
@@ -86,7 +109,7 @@
           </div>
         </div>
       </div>
-      <div class="row mb-3">
+      <div class="row mb-2">
         <div class="col">
           <div class="panel panel-primary shadow-lg p-3 rounded pnl-top">
             <div class="panel-body">
@@ -101,14 +124,100 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row mb-2">
         <div class="col">
-          <div class="panel panel-primary shadow-lg p-3 rounded pnl-hints">
+          <div class="panel panel-primary shadow-lg p-4 rounded pnl-answer">
             <div class="panel-body">
-              <div class="container text-center m-0">
+              <div class="container m-0">
+                <div class="row" style="text-align:left">
+                  <div class="col">
+                    <h4><strong>Guess the country! </strong></h4>
+                    <h6 class="text-small">Click on the option below, and then confirm your choice.</h6>
+                  </div>
+                </div>
+
+                <div class="row mb-1" style="text-align:left">
+                  <div class="col-3 p-0 option-holder">
+                    <p>Option 1: </p>
+                  </div>
+                  <div class="col-9">
+                    <button class="btn btn-light btn-option">United Kingdom</button>
+                  </div>
+                </div>
+
+                <div class="row mb-1" style="text-align:left">
+                  <div class="col-3 p-0 option-holder">
+                    <p>Option 2: </p>
+                  </div>
+                  <div class="col-9">
+                    <button class="btn btn-light btn-option">UAE</button>
+                  </div>
+                </div>
+
+                <div class="row mb-1" style="text-align:left">
+                  <div class="col-3 p-0 option-holder">
+                    <p>Option 3: </p>
+                  </div>
+                  <div class="col-9">
+                    <button class="btn btn-light btn-option">Mexico</button>
+                  </div>
+                </div>
+
+                <div class="row mb-1" style="text-align:left">
+                  <div class="col-3 p-0 option-holder">
+                    <p>Option 4: </p>
+                  </div>
+                  <div class="col-9">
+                    <button class="btn btn-light btn-option">India</button>
+                  </div>
+                </div>
+
+                <div class="row mb-1" style="text-align:left">
+                  <div class="col-3 p-0 option-holder">
+                    <p>Option 5: </p>
+                  </div>
+                  <div class="col-9">
+                    <button class="btn btn-light btn-option">Spain</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <div class="panel panel-primary shadow-lg p-4 rounded pnl-hints">
+            <div class="panel-body">
+              <div class="container m-0">
+                <div class="row" style="text-align:left">
+                  <div class="col">
+                    <h4>Clues </h4>
+                    <p class="text-small">Picking the hardest clue maximises your chances of scoring the highest point. Picking a clue deducts points based on the <a href="#">Clue Rating Matrix</a>.</p>
+                  </div>
+                </div>
                 <div class="row align-items-start">
                   <div class="col">
-                    <p class="m-0">Theme: <strong>Geography</strong></p>
+                    <button class="btn btn-light">
+                      <span class="fas fa-lightbulb"></span>
+                    </button> 
+                    <br>
+                    Easy
+                  </div>
+                  <div class="col">
+                    <button class="btn btn-light">
+                      <span class="fas fa-lightbulb"></span>
+                    </button> 
+                    <br>
+                    Medium
+                  </div>
+                  <div class="col">
+                    <button class="btn btn-light">
+                      <span class="fas fa-lightbulb"></span>
+                    </button> 
+                    <br>
+                    Hard
                   </div>
                 </div>
               </div>
@@ -116,6 +225,7 @@
           </div>
         </div>
       </div>
+      
     </div>
 
     <script
