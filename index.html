@@ -1,33 +1,162 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="refresh" content="5" /> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CluedIn - Ready to win?</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Exo&display=swap");
     </style>
     <style>
-        body {
-            font-family: 'Exo', sans-serif;
-        }
+      body {
+        font-family: "Exo", sans-serif;
+        background-color: black;
+      }
+      
+      .pnl-top {
+        background-color: #262626;
+      }
+
+      .pnl-hints {
+        background-color: #2b0300;
+        /* #6b2e00 */
+      }
     </style>
-    
-</head>
-<body>
-   <div class="container text-center">
-    <div class="row align-items-start">
-      <div class="col">
-        <h1>CluedIn</h1>
+  </head>
+  <body>
+    <div class="panel panel-primary border-white">
+      <div class="panel-body">
+        <div class="container text-center">
+          <div class="row align-items-start">
+            <div class="col">
+              <h1><strong>CluedIn</strong></h1>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+
+    <hr />
+    <div class="container text-center">
+      <div class="row align-items-start">
+        <div class="col-3">
+          <h5>Day-11</h5>
+        </div>
+        <div class="col-9">
+          <h5>Next Re-fresh in: <i id="countdown">000</i></h5>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="container text-center">
+      <div class="row mb-3">
+        <div class="col">
+          <div class="panel panel-primary shadow-lg p-3 rounded pnl-top">
+            <div class="panel-body">
+              <div class="container text-center">
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="m-0">Previous Score: <br><strong>90/100</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="panel panel-primary shadow-lg p-3 rounded pnl-top">
+            <div class="panel-body">
+              <div class="container text-center">
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="m-0">Monthly Rank: <br><strong>143/1876</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <div class="panel panel-primary shadow-lg p-3 rounded pnl-top">
+            <div class="panel-body">
+              <div class="container text-center m-0">
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="m-0">Theme: <strong>Geography</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="panel panel-primary shadow-lg p-3 rounded pnl-hints">
+            <div class="panel-body">
+              <div class="container text-center m-0">
+                <div class="row align-items-start">
+                  <div class="col">
+                    <p class="m-0">Theme: <strong>Geography</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Function to update the countdown
+      function updateCountdown() {
+        // Get the current time
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        // Calculate the time until 2 PM the next day
+        const targetTime = new Date(now);
+        targetTime.setDate(targetTime.getDate() + 1);
+        targetTime.setHours(14, 0, 0, 0);
+
+        // Calculate the time difference
+        const timeDiff = targetTime - now;
+
+        // Calculate hours, minutes, and seconds
+        const hoursRemaining = Math.floor(timeDiff / (1000 * 60 * 60));
+        const minutesRemaining = Math.floor(
+          (timeDiff % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const secondsRemaining = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+        // Display the countdown
+        const countdownElement = document.getElementById("countdown");
+        countdownElement.innerHTML = `${hoursRemaining}:${minutesRemaining}:${secondsRemaining}`;
+      }
+
+      // Update the countdown every second
+      setInterval(updateCountdown, 1000);
+
+      // Initial call to set the countdown
+      updateCountdown();
+    </script>
+  </body>
 </html>
